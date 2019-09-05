@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Modal} from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Modal, TextInput} from 'react-native';
 import Card from '../../components/Card';
 import api from '../../services/api';
-import { TextInput } from 'react-native-gesture-handler';
+
+import close from '../../assets/close-gray.png';
+import plus from '../../assets/plus.png';
+import styles from './styles';
+import { colors } from '../../styles';
 
 export default function Contact() {
     const [contacts, setContacts] = useState([]);
@@ -22,17 +26,32 @@ export default function Contact() {
         setShowMe(!showMe);
     }
 
+    function handleSave() {
+
+    }
+
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={handleOpen}>
-                <Text>Add</Text>
+            <TouchableOpacity style={styles.blockButton} onPress={handleOpen}>
+                <Image source={plus} />
+                <Text style={styles.buttonText}>Novo contato</Text>
             </TouchableOpacity>
-            <Modal visible={showMe} onRequestClose={()=> console.log('teste')}>
-                <TouchableOpacity onPress={handleOpen}>
-                    <Text>Close</Text>
-                </TouchableOpacity>
-                <View>
-                    <TextInput placeholder="jose@email.com" />
+            <Modal
+                transparent={true} 
+                visible={showMe} 
+                onRequestClose={()=> console.log('Modal has been closed')}>
+                <View style={styles.modalBody}>
+                    <View style={styles.blockHeader}>
+                        <TouchableOpacity onPress={handleOpen}>
+                            <Image source={close} />
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <TextInput style={styles.input} placeholderTextColor="#fff" placeholder="jose@email.com" />
+                        <TouchableOpacity onPress={handleSave}>
+                            <Text>Adicionar</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </Modal>
             <ScrollView>
@@ -48,10 +67,13 @@ export default function Contact() {
             </ScrollView>
         </View>
     )
-}
+};
 
-styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    }
+
+Contact.navigationOptions = () => ({
+    headerStyle: {
+        backgroundColor: colors.blueDark,
+    },
+    headerTintColor: colors.white
 });
+

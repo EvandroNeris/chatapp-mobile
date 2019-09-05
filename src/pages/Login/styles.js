@@ -1,16 +1,17 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../styles';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
-        backgroundColor: '#1B1B2A',
+        backgroundColor: colors.blueDark,
         paddingHorizontal: 30
     },
     input: {
         borderBottomColor: '#3D3E60',
         borderBottomWidth: 1,
-        color: '#fff'
+        color: colors.white
     },
     inputBlock: {
 
@@ -19,19 +20,19 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        color: '#fff',
+        color: colors.white,
         fontSize: 30,
         fontWeight: 'bold',
     },
     button: {
         marginTop: 50,
-        backgroundColor: '#FA6D1C',
+        backgroundColor: colors.orange,
         height: 50,
         alignItems: 'center',
         justifyContent: 'center'
     },
     textButton: {
-        color: '#fff',
+        color: colors.white,
         fontWeight: 'bold',
         fontSize: 20
     }

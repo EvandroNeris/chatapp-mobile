@@ -4,6 +4,8 @@ import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'rea
 import api from '../../services/api';
 import io from 'socket.io-client';
 
+import styles from './styles';
+
 export default function Chat({ navigation }) {
     const [message, setMessage] = useState([]);
     const id = navigation.getParam('user');
@@ -54,10 +56,4 @@ export default function Chat({ navigation }) {
            </View>
         </View>
     )
-}
-
-styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    }
-});
+};
