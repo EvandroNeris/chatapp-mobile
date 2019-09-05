@@ -30,9 +30,6 @@ export default function Home({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={handleLogout}>
-                <Text>Contacts</Text>
-            </TouchableOpacity>
             { _.map(contacts, (data) => console.log(data)(
                 <TouchableOpacity >
                     <Card 
@@ -54,6 +51,9 @@ export default function Home({ navigation }) {
                 avatar={'https://scontent.fbsb14-1.fna.fbcdn.net/v/t1.0-9/61118166_1244565615701705_273373538814001152_n.jpg?_nc_cat=100&_nc_oc=AQljJLtXswf5Uq2Yy2QPC7JtMleMycYvaCsYGTUZVWBv_JkJ7q5g8ra7lUxTOHmTr9k&_nc_ht=scontent.fbsb14-1.fna&oh=194ce1eb2de0bfd7cf9407b52e41652b&oe=5E11564D'}
                 createdAt={Date()}
             />
+            <TouchableOpacity style={styles.button} onPress={handleLogout}>
+                <Text style={styles.textButton}>+</Text>
+            </TouchableOpacity>
         </View>
     )
 };
