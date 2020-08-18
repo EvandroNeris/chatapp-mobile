@@ -36,24 +36,24 @@ export default function Chat({ navigation }) {
         console.log(response);
     }
 
-    return (
-        <View style={styles.container}>
-            <ScrollView>
-            {
-                _.map(message, (data) => (
-                    <Text>{data.message}</Text>
-                ))
-            }
-            </ScrollView>
-           <View>
-                <Input 
-                    placeholder="Digite..." 
-                    value={message} 
-                    onChangeText={setMessage}/>
-                <TouchableOpacity onPress={}>
-                    <Text>Enviar</Text>
-                </TouchableOpacity>
-           </View>
-        </View>
-    )
+  return (
+    <View style={styles.container}>
+      <ScrollView>
+      {
+        _.map(message, (data) => (
+          <Text>{data.message}</Text>
+        ))
+      }
+      </ScrollView>
+      <View>
+        <Input 
+          placeholder="Digite..." 
+          value={message} 
+          onChangeText={setMessage}/>
+        <TouchableOpacity onPress={}>
+          <Text>Enviar</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  )
 };

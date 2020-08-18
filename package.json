@@ -2,6 +2,10 @@
   "name": "chatapp",
   "version": "0.0.1",
   "private": true,
+  "author": {
+    "name": "Evandro Neris",
+    "email": "evandroneris95@hotmail.com"
+  },
   "scripts": {
     "start": "react-native start",
     "test": "jest"

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import _ from 'lodash';
 import AsyncStorage from '@react-native-community/async-storage';
+import _ from 'lodash';
+
 import AppContainer from './routes';
 import Login from './pages/Login';
 

@@ -5,14 +5,14 @@ import styles from './styles';
 import icon from '../../assets/menu.png';
 
 export default function Header() {
-    return (
-        <View style={styles.container}>
-            <View>
-                <Text style={styles.text}>ChatApp</Text>
-            </View>
-            <TouchableOpacity>
-                <Image source={icon} />
-            </TouchableOpacity>
-        </View>
-    )
+  return (
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.text}>ChatApp</Text>
+      </View>
+      <TouchableOpacity>
+        <Image source={icon} />
+      </TouchableOpacity>
+    </View>
+  );
 }

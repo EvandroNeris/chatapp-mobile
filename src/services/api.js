@@ -5,17 +5,17 @@ const dev = 'http://localhost:7002';
 const beta = 'https://appchat-backend.herokuapp.com';
 
 const api = create({
-    baseURL: beta
+  baseURL: beta
 });
 
 api.addAsyncRequestTransform(request => async () => {
-    const access = await AsyncStorage.getItem('token');
-    console.log(access);
-    request.headers['Cache-Control'] = 'no-cache';
-  
-    if (access) {
-      request.headers.authorization = `Bearer ${access}`;
-    }
+  const access = await AsyncStorage.getItem('token');
+
+  request.headers['Cache-Control'] = 'no-cache';
+
+  if (access) {
+    request.headers.authorization = `Bearer ${access}`;
+  }
 });
 
 export default api;

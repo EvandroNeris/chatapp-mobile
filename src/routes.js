@@ -4,34 +4,33 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Contact from './pages/Contacts';
 
-const HomeStack = createStackNavigator(
-    {
-        Home: {
-            screen: Home,
-            navigationOptions: () => ({
-                headerTitle: 'Home'
-            }),
-        },
-        Contact: {
-            screen: Contact,
-            navigationOptions: () => ({
-                headerTitle: 'Contatos'
-            })
-        }
-    }
-)
+const HomeStack = createStackNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: () => ({
+      headerTitle: 'Home'
+    }),
+  },
+  Contact: {
+    screen: Contact,
+    navigationOptions: () => ({
+      headerTitle: 'Contatos'
+    })
+  }
+});
+
 const LoginStack = createStackNavigator({
-    Login,
+  Login,
 });
 
 const AppSwitchNavigator = createSwitchNavigator(
-    {
-        LoginStack,
-        Home: HomeStack
-    },
-    {
-        initialRouteName: 'Home',
-    }
+  {
+    LoginStack,
+    Home: HomeStack
+  },
+  {
+    initialRouteName: 'Home',
+  }
 );
 
 const AppContainer = createAppContainer(AppSwitchNavigator);
